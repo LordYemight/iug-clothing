@@ -1,27 +1,18 @@
 import { Playfair_Display, Outfit } from 'next/font/google';
 import './globals.css';
 
-const headingFont = Playfair_Display({ 
-  subsets: ['latin'], 
-  variable: '--font-heading',
-  display: 'swap' 
-});
-
-const bodyFont = Outfit({ 
-  subsets: ['latin'], 
-  variable: '--font-body',
-  display: 'swap'
-});
+const heading = Playfair_Display({ subsets: ['latin'], variable: '--font-heading' });
+const body = Outfit({ subsets: ['latin'], variable: '--font-body' });
 
 export const metadata = {
-  title: 'I.U.G Clothing | Bespoke Nigerian Tailoring',
-  description: 'Traditional Craft, Modern Precision by Ibrahim Usman Yusuf.',
+  title: 'I.U.G Clothing | Traditional Craft, Modern Precision',
+  description: 'Bespoke fashion house by Ibrahim Usman Yusuf merging Northern Nigerian heritage with modern silhouettes.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${headingFont.variable} ${bodyFont.variable} font-sans antialiased selection:bg-[var(--accent)] selection:text-black`}>
+    <html lang="en">
+      <body className={`${heading.variable} ${body.variable} font-sans bg-[var(--primary)] text-white`}>
         {children}
       </body>
     </html>
